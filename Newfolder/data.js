@@ -18,14 +18,13 @@ document.querySelector('.convertBtn').addEventListener('click', () => {
     'dÖ': 'd«',
     '`¨y': '`y¨',
     '-': '-',
-    
- 
-    
-    
-
-    
+    '¯§…' : '¯§„',
+    'oy' : 'o–',
+    'Uy' : 'Uz',
+    'Ky' : 'Kz',
+    'Zy' : 'Zz',
   }
-  str = str.replace(/h়|h‡়|m…|K…|W়|h‡়v|–|Üy|c…|e…|W‡়|wN&b|›`Ö|dÖ|`¨y|-/gi, function (matched) {
+  str = str.replace(/h়|h‡়|m…|K…|W়|h‡়v|–|Üy|c…|e…|W‡়|wN&b|›`Ö|dÖ|`¨y|-|¯§…|oy|Uy|Ky|Zy/gi, function (matched) {
     return mapObj6[matched];
   });
 
