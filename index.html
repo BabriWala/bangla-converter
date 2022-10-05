@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <!-- Mirrored from bangla.plus/bijoy-unicode-converter/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2022 07:29:26 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=utf-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>বিজয় ও ইউনিকোড ফন্ট কনভার্টার</title>
+    <meta
+      name="description"
+      content="Convert Unicode Bangla to Bijoy, and Bijoy font to Unicode."
+    />
+    <style>
+ 
+      body {
+        font-style: normal;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: SiyamRupali, Verdana, Helvetica, Sans-Serif;
+        font-stretch: ultra-expanded;
+        padding-top: 50px;
+        margin: 0;
+        background-color: #efefef;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Verdana, Helvetica, Sans-Serif;
+        line-height: 37px;
+      }
+      @font-face {
+      font-family: "SutonnyMj";
+      src: url('./Newfolder/sutonnymj.ttf') format ('truetype');
+    }
+      #bijoyText{
+        font-family: SutonnyMj;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 30px;
+      }
+      h4,
+      h5,
+      h6 {
+        margin-bottom: 20px;
+      }
+      h1,
+      h3,
+      h5 {
+        color: #000;
+      }
+      h2,
+      h4,
+      h6 {
+        color: #0d6206;
+        font-weight: normal;
+      }
+      h1,
+      h2 {
+        font-size: 22px;
+      }
+      h3,
+      h4 {
+        font-size: 20px;
+      }
+      h5,
+      h6 {
+        font-size: 18px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      a {
+        color: #0d6206;
+        text-decoration: none;
+      }
+      a:hover,
+      a:active {
+        color: #000;
+        text-decoration: underline;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 20px;
+      }
+      .bijoy-font {
+        font-family: "SutonnyMj" !important;
+        font-size: 1.2em;
+      }
+      .body-content {
+        background-color: #fff;
+        overflow: hidden;
+        padding: 30px 0;
+        min-height: 600px;
+      }
+      body.empty-layout {
+        padding-top: 0;
+        background-color: #fff;
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .pull-right {
+        float: right !important;
+      }
+      .pull-left {
+        float: left !important;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .display-block {
+        display: block !important;
+      }
+      .display-none {
+        display: none !important;
+      }
+      .defer {
+        visibility: hidden;
+      }
+      .sr-only,
+      .modal {
+        display: none;
+      }
+      .page-text {
+        margin-bottom: 30px;
+      }
+      .hidden-s,
+      .hidden-s-inline {
+        display: none;
+      }
+      pre {
+        display: block;
+        padding: 10px;
+        font-size: 13px;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: auto;
+      }
+      .img-thumbnail {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        padding: 4px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      input[type="text"],
+      select,
+      textarea {
+        font-family: "SiyamRupali", Verdana, Helvetica, Sans-Serif !important;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.9em;
+        height: 36px;
+        margin-bottom: 10px;
+      }
+      .btn-primary {
+        font-family: "SiyamRupali", Verdana, Helvetica, Sans-Serif !important;
+        color: #fff;
+        background-color: #31522f;
+        border-radius: 6px;
+        border: 1px solid #000;
+        padding: 6px 10px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.9em;
+        height: 36px;
+        cursor: pointer;
+      }
+      .btn-default {
+        font-family: "SiyamRupali", Verdana, Helvetica, Sans-Serif !important;
+        color: #000;
+        background-color: #ccc;
+        border-radius: 6px;
+        border: 1px solid #999;
+        padding: 6px 10px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.9em;
+        height: 36px;
+        cursor: pointer;
+      }
+      .sl-content {
+        position: relative;
+        max-height: 200px;
+        overflow: hidden;
+      }
+      .sl-content[data-height="165"] {
+        max-height: 165px;
+      }
+      .sl-content[data-height="300"] {
+        max-height: 300px;
+      }
+      .sl-content[data-height="400"] {
+        max-height: 400px;
+      }
+      .sl-control {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        height: 40px;
+        width: 100%;
+        border-top: dotted 1px #ccc;
+      }
+      .sl-control a {
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 13px;
+        text-align: right;
+        color: #060;
+      }
+      .share-buttons {
+        display: block;
+        height: 26px;
+      }
+      @media only screen and (min-width: 992px) {
+        h1,
+        h2 {
+          font-size: 26px;
+        }
+        h3,
+        h4 {
+          font-size: 22px;
+        }
+        h5,
+        h6 {
+          font-size: 18px;
+        }
+        .hidden-s {
+          display: block;
+        }
+        .hidden-s-inline {
+          display: inline;
+        }
+        .visible-s {
+          display: none;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      [class*="col-"] {
+        width: 100%;
+        float: left;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .col-s-1 {
+        width: 8.33%;
+      }
+      .col-s-2 {
+        width: 16.66%;
+      }
+      .col-s-3 {
+        width: 25%;
+      }
+      .col-s-4 {
+        width: 33.33%;
+      }
+      .col-s-5 {
+        width: 41.66%;
+      }
+      .col-s-6 {
+        width: 50%;
+      }
+      .col-s-7 {
+        width: 58.33%;
+      }
+      .col-s-8 {
+        width: 66.66%;
+      }
+      .col-s-9 {
+        width: 75%;
+      }
+      .col-s-10 {
+        width: 83.33%;
+      }
+      .col-s-11 {
+        width: 91.66%;
+      }
+      .col-s-12 {
+        width: 100%;
+      }
+      @media only screen and (min-width: 992px) {
+        .col-1 {
+          width: 8.33%;
+        }
+        .col-2 {
+          width: 16.66%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+        .col-4 {
+          width: 33.33%;
+        }
+        .col-5 {
+          width: 41.66%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-7 {
+          width: 58.33%;
+        }
+        .col-8 {
+          width: 66.66%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-10 {
+          width: 83.33%;
+        }
+        .col-11 {
+          width: 91.66%;
+        }
+        .col-12 {
+          width: 100%;
+        }
+        .col-offset-2 {
+          margin-left: 16.66%;
+        }
+        .col-offset-3 {
+          margin-left: 25%;
+        }
+        .col-offset-4 {
+          margin-left: 33.33%;
+        }
+      }
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media only screen and (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      @media only screen and (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      nav {
+        background-color: #526d51;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .topnav {
+        height: 55px;
+        background-color: #31522f;
+        margin: 0 -15px;
+        overflow: hidden;
+      }
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .nav-right {
+        float: right;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .logo {
+        padding: 10px 16px 2px 16px !important;
+      }
+      #logo {
+        max-height: 33px;
+      }
+      #language {
+        border-radius: 4px;
+        margin-top: -5px;
+        padding: 2px 6px;
+        background-color: #899b87;
+        color: #fff;
+        height: 30px;
+      }
+      #date-today {
+        display: block;
+        color: #b2ccaf;
+      }
+      .topnav .icon {
+        display: none;
+      }
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      .dropdown .dropbtn {
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: #fff;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #efefef;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        float: none;
+        color: #000;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .topnav a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #555;
+        color: #fff;
+      }
+      .dropdown-content a:hover {
+        background-color: #ddd;
+        color: #000;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      @media screen and (max-width: 767px) {
+        .topnav.responsive .logo {
+          border-bottom: 1px solid #526d51;
+        }
+        .topnav a:not(.logo),
+        .dropdown .dropbtn,
+        .nav-right {
+          display: none;
+        }
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+        .topnav.responsive {
+          height: auto;
+          position: relative;
+        }
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a,
+        .topnav.responsive .nav-right {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .topnav.responsive .dropdown {
+          float: none;
+        }
+        .topnav.responsive .dropdown-content {
+          position: relative;
+        }
+        .topnav.responsive .dropdown .dropbtn {
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+      .box {
+        padding: 10px;
+        background-color: #efefef;
+        border: #899b87;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .box.app-links {
+        margin: 15px auto 15px auto;
+      }
+      .ad-slot {
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+      }
+      [class*="col-"] .ad-slot:first-child {
+        margin-top: 0;
+      }
+      .adsbygoogle {
+        display: block;
+      }
+      .ad-tower {
+        width: 300px;
+        height: 250px;
+      }
+      .ad-wide {
+        width: 320px;
+        height: 50px;
+      }
+      .ad-box {
+        width: 300px;
+        height: 250px;
+      }
+      @media only screen and (min-width: 768px) {
+        .ad-tower {
+          width: 300px;
+          height: 250px;
+        }
+        .ad-wide {
+          width: 468px;
+          height: 60px;
+        }
+        .ad-box {
+          width: 300px;
+          height: 250px;
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .ad-tower {
+          width: 160px;
+          height: 600px;
+        }
+        .ad-wide {
+          width: 468px;
+          height: 60px;
+        }
+        .ad-box {
+          width: 250px;
+          height: 250px;
+        }
+      }
+      @media only screen and (min-width: 1200px) {
+        .ad-tower {
+          width: 300px;
+          height: 600px;
+        }
+        .ad-wide {
+          width: 728px;
+          height: 90px;
+        }
+        .ad-box {
+          width: 300px;
+          height: 250px;
+        }
+      }
+      @font-face {
+        font-family: "fontello";
+        src: url("https://bangla.plus/fonts/fontello.woff2?24128401")
+            format("woff2"),
+          url("https://bangla.plus/fonts/fontello.woff?24128401") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      [class^="icon-"]:before,
+      [class*=" icon-"]:before {
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: 0.2em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: 0.2em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .icon-down-dir:before {
+        content: "";
+      }
+      .icon-up-dir:before {
+        content: "";
+      }
+      .icon-left-dir:before {
+        content: "";
+      }
+      .icon-right-dir:before {
+        content: "";
+      }
+      .icon-down-open:before {
+        content: "";
+      }
+      .icon-left-open:before {
+        content: "";
+      }
+      .icon-up-open:before {
+        content: "";
+      }
+      .icon-right-open:before {
+        content: "";
+      }
+      .icon-down-arrow:before {
+        content: "";
+      }
+      .icon-left-arrow:before {
+        content: "";
+      }
+      .icon-right-arrow:before {
+        content: "";
+      }
+      .icon-up-arrow:before {
+        content: "";
+      }
+      .icon-home:before {
+        content: "";
+      }
+      .icon-search:before {
+        content: "";
+      }
+      .icon-calendar:before {
+        content: "";
+      }
+      .icon-mail:before {
+        content: "";
+      }
+      .icon-ok:before {
+        content: "";
+      }
+      .icon-cancel:before {
+        content: "";
+      }
+      .icon-phone:before {
+        content: "";
+      }
+      .icon-list:before {
+        content: "";
+      }
+      .icon-globe:before {
+        content: "";
+      }
+      .icon-star:before {
+        content: "";
+      }
+      .icon-camera:before {
+        content: "";
+      }
+      .icon-attention:before {
+        content: "";
+      }
+      .icon-plus:before {
+        content: "";
+      }
+      .icon-cog:before {
+        content: "";
+      }
+      .icon-twitter:before {
+        content: "";
+      }
+      .icon-facebook:before {
+        content: "";
+      }
+      .icon-gplus:before {
+        content: "";
+      }
+      .icon-linkedin:before {
+        content: "";
+      }
+      .icon-youtube:before {
+        content: "";
+      }
+      .icon-instagram:before {
+        content: "";
+      }
+      .icon-flickr:before {
+        content: "";
+      }
+      .icon-apple:before {
+        content: "";
+      }
+      .icon-windows:before {
+        content: "";
+      }
+      .icon-android:before {
+        content: "";
+      }
+      .icon-fax:before {
+        content: "";
+      }
+      .icon-trash:before {
+        content: "";
+      }
+      .icon-pinterest:before {
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row defer font-converter">
+      <div class="col-5">
+        <div class="box">
+          <a href="./Newfolder/index2.html">Hanzala</a>
+
+
+          <button
+            id="copyUnicode"
+            name="copyUnicode"
+            class="btn-default pull-right display-none"
+            onclick="copyText('unicode')"
+            title="ক্লিপবোর্ডে কপি করুন"
+          >
+            কপি করুন
+          </button>
+          <h2>ইউনিকোড</h2>
+          <div class="height20">
+            <input
+              id="ConverterrdKeyboard1"
+              onclick="ConverterKeyboardLayoutOptionClick()"
+              name="ConverterKeyboardSelector"
+              value="1"
+              type="radio"
+            />
+            <label for="ConverterrdKeyboard1">ইংরেজি</label> &nbsp;
+            <input
+              id="ConverterrdKeyboard2"
+              onclick="ConverterKeyboardLayoutOptionClick()"
+              name="ConverterKeyboardSelector"
+              value="2"
+              type="radio"
+              checked="Checked"
+            />
+            <label for="ConverterrdKeyboard2">অভ্র</label> &nbsp;
+            <input
+              id="ConverterrdKeyboard3"
+              onclick="ConverterKeyboardLayoutOptionClick()"
+              name="ConverterKeyboardSelector"
+              value="3"
+              type="radio"
+            />
+            <label for="ConverterrdKeyboard3">ইউনিজয়</label>
+          </div>
+          <textarea
+            aria-label="Copy or type Unicode text here"
+            placeholder="ইউনিকোড থেকে বিজয়ে লেখা কনভার্ট করতে চাইলে ইউনিকোডে এখানে লিখুন, অথবা ইউনিকোডের লেখা কপি করে এখানে দিন।"
+            id="uniText"
+            name="uniText"
+            onkeydown="return ConverterbKeyboard.KeyBoardDown(event)"
+            ,
+            onkeypress="return ConverterbKeyboard.KeyBoardPress(event)"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="control-buttons">
+          <button
+            class="btn-primary"
+            title="ইউনিকোড থেকে বিজয়ে কনভার্ট"
+            onclick="return convertToBijoy()"
+          >
+            বিজয়
+            <i class="icon-right-arrow pull-right hidden-s"></i>
+            <i class="icon-down-arrow pull-right visible-s"></i>
+            <i class="icon-down-arrow pull-left visible-s"></i>
+          </button>
+          <button
+            class="btn-primary"
+            title="বিজয় থেকে ইউনিকোডে কনভার্ট"
+            onclick="return convertToUnicode()"
+          >
+            ইউনিকোড
+            <i class="icon-left-arrow pull-left hidden-s"></i>
+            <i class="icon-up-arrow pull-left visible-s"></i>
+            <i class="icon-up-arrow pull-right visible-s"></i>
+          </button>
+          <button class="btn-default" onclick="return clearAllText()">
+            মুছে ফেলুন
+            <i class="icon-left-arrow pull-left hidden-s"></i>
+            <i class="icon-up-arrow pull-left visible-s"></i>
+            <i class="icon-right-arrow pull-right hidden-s"></i>
+            <i class="icon-down-arrow pull-right visible-s"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="box">
+          <button
+            id="copyBijoy"
+            name="copyBijoy"
+            class="btn-default pull-right display-none"
+            onclick="copyText('bijoy')"
+            title="ক্লিপবোর্ডে কপি করুন"
+          >
+            কপি করুন
+          </button>
+          <h2>বিজয়</h2>
+          <div class="height20"></div>
+          <textarea
+            aria-label="Copy Bijoy text here"
+            placeholder="বিজয় থেকে ইউনিকোডে লেখা কনভার্ট করতে চাইলে বিজয় ফন্টের লেখা কপি করে এখানে দিন।"
+            id="bijoyText"
+            name="bijoyText"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <link
+      rel="preload"
+      href="site.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <script
+      defer
+      src="code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="code.jquery.com/jquery-migrate-3.4.0.min.js"
+      integrity="sha256-mBCu5+bVfYzOqpYyK4jm30ZxAZRomuErKEFJFIyrwvM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/defer">
+      window.jQuery || document.write('<script src="/js/jquery">\x3C/script>')
+    </script>
+    <script
+      defer
+      src="site.js"
+    ></script>
+    <script type="text/defer">
+      dateToday('date-today', 'Bangla', 'আজ ');
+
+      $(document).ready(function (e) {
+          if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/bp-sw?v=kupEqkzJuSobH2f_2ZK28fjzDPCVmkAM3m64kWrDijg1');
+          }
+      });
+    </script>
+    <script type="text/defer">
+      var ConverterbKeyboard = new banglaKeyboard();
+
+
+      function ConverterKeyboardLayoutOptionClick() {
+          var field = document.getElementsByName('ConverterKeyboardSelector');
+
+          for (var counter = 0; counter < field.length; counter++) {
+              if (field[counter].checked) {
+                  EnglishKeyboard = false;
+                  ConverterbKeyboard.KeyBoardLayout = counter + 1;
+
+                  bnwSetCookie("banglaplus.KeyboardLayout", field[counter].value, 90, "https://bangla.plus/");
+
+                  try
+                  {
+                      var myFld = document.getElementById("uniText");
+                      myFld.focus();
+                  }
+                  catch (err)
+                  {
+
+                  }
+                 break;
+              }
+          }
+      }
+
+      function ConverterOnPageLoad()
+      {
+          ConverterbKeyboard.KeyBoardLayout = 2;
+      }
+
+
+      ConverterOnPageLoad();
+    </script>
+    <script defer src="fontconverter.js"></script>
+    <script>
+      function copyText(textType) {
+        var textBox = $("#uniText");
+        var fType = "ইউনিকোড";
+        if (textType == "bijoy") {
+          textBox = $("#bijoyText");
+        }
+        fType = "বিজয়";
+
+        if (textBox.val() == "") {
+          alert("কপি করার মতো কোনো লেখা নেই " + fType + "-এর ঘরে।");
+        } else {
+          var result = CopyToClipboard(textBox.attr("id"));
+          if (result) {
+            alert("লেখাটি ক্লিপবোর্ডে কপি করা হয়ে গেছে।");
+          } else {
+            alert("দুঃখিত, লেখাটি কপি করা সম্ভব হয়নি!");
+          }
+        }
+      }
+    </script>
+
+  </body>
+
+  
+</html>

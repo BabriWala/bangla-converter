@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "SutonnyMj";
+    src: url('sutonnymj.ttf') format ('truetype');
+  }
+
+.name{
+    font-family: 'SutonnyMj';
+    color: #4A4A4B;
+}
+
+.unicode{
+    font-size: 18px;
+}
+
+.bijoy{
+    font-family: 'SutonnyMj';
+    font-size: 25px;
+    line-height: 0.5;
+}
+
+.bijoy__title{
+    font-family: 'SutonnyMj';
+    font-size: 25px;
+
+}
