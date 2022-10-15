@@ -52,9 +52,12 @@ document.querySelector('.convertBtn').addEventListener('click', () => {
 'e‡v' : '‡ev',
 'k‡v' : '‡kv',
 'UÖ': 'Uª',
+'Ww়': 'wo',
+    
+    
     
   }
-  str = str.replace(/h়|h‡়|m…|K…|W়|h‡়v|–|Üy|c…|e…|W‡়|wN&b|›`Ö|dÖ|`¨y|-|¯§…|oy|Uy|Ky|Zy|Zª¨|g‡v|c‡v|i‡v|M‡v|j‡v|b‡v|Z…|g…|Z¨y|q‡v|dy|f‡v|hw়|N‡v|¶y|b…|i‡v|`…|h‡v|m‡v|nÖ|c‡v|Z‡v|óÖ|b‡v|e‡v|k‡v|UÖ/gi, function (matched) {
+  str = str.replace(/h়|h‡়|m…|K…|W়|h‡়v|–|Üy|c…|e…|W‡়|wN&b|›`Ö|dÖ|`¨y|-|¯§…|oy|Uy|Ky|Zy|Zª¨|g‡v|c‡v|i‡v|M‡v|j‡v|b‡v|Z…|g…|Z¨y|q‡v|dy|f‡v|hw়|N‡v|¶y|b…|i‡v|`…|h‡v|m‡v|nÖ|c‡v|Z‡v|óÖ|b‡v|e‡v|k‡v|UÖ|Ww়/gi, function (matched) {
     return mapObj6[matched];
   });
 
